@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+
+  /* Page gradient */
+  --bg-top: #070d18;
+  --bg-mid: #0a1220;
+  --bg-bottom: #060a12;
+
+  /* Brand accent — single family (teal, matches logo metal + charts) */
+  --app-accent: #38e8c7;
+  --app-accent-strong: #16c7a8;
+  --accent-soft: rgba(56, 232, 199, 0.12);
+  --accent-ring: rgba(56, 232, 199, 0.22);
+  --selection: rgba(56, 232, 199, 0.28);
+
+  /* Surfaces */
+  --app-bg: #070d18;
+  --app-card: rgba(12, 18, 32, 0.92);
+  --app-border: rgba(148, 163, 184, 0.14);
+  --surface-sidebar: rgba(10, 16, 28, 0.94);
+  --surface-raised: rgba(18, 27, 46, 0.55);
+
+  /* Text */
+  --app-text: rgba(248, 250, 252, 0.96);
+  --app-muted-text: rgba(203, 213, 225, 0.62);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    'Apple Color Emoji',
+    'Segoe UI Emoji';
+  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 55%, var(--bg-bottom) 100%);
+  color: white;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--selection);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--selection) rgba(255, 255, 255, 0.06);
+}
+
+/* Native <select> lists: many browsers honor option colors; keeps lists dark on Windows/Chrome */
+select {
+  color-scheme: dark;
+  background-color: #0b1622;
+  color: #e5e7eb;
+}
+
+select option,
+select optgroup {
+  background-color: #0b1622;
+  color: #e5e7eb;
+}
+
+input:not([type='color']),
+select,
+textarea,
+button[role='combobox'] {
+  background-color: #0b1622;
+  background-image: none;
+  backdrop-filter: none;
+  color: #e5e7eb;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6b7280;
+}
+
+/* react-day-picker (portal popover) — dark theme */
+.rdp-portal-root {
+  --rdp-accent-color: #0d9488;
+  --rdp-background-color: #0b1220;
+}
+.rdp-portal-root .rdp-root {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.875rem;
+}
+.rdp-portal-root .rdp-month_caption {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+}
+.rdp-portal-root .rdp-weekday {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.7rem;
+}
+.rdp-portal-root .rdp-day_button {
+  color: rgba(255, 255, 255, 0.88);
+}
+.rdp-portal-root .rdp-outside .rdp-day_button {
+  color: rgba(255, 255, 255, 0.22);
+}
+.rdp-portal-root .rdp-selected .rdp-day_button {
+  background: rgb(13 148 136) !important;
+  color: white !important;
+  border-radius: 0.5rem;
+}
+.rdp-portal-root .rdp-today:not(.rdp-selected) .rdp-day_button {
+  box-shadow: inset 0 0 0 1px rgba(45, 212, 191, 0.45);
+  border-radius: 0.5rem;
+}
+.rdp-portal-root .rdp-nav button {
+  color: rgba(255, 255, 255, 0.75);
+}
+.rdp-portal-root .rdp-nav button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0.375rem;
+}
+

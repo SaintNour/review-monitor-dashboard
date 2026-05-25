@@ -1,0 +1,36 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Cache
+.eslintcache
+.npm
+coverage
+.nyc_output
+
+# Optional REPL history
+.node_repl_history
+
+# Pack output
+*.tgz
+.yarn-integrity
